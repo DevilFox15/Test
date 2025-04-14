@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cofferight Menu</title>
+
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Cofferight Menu</h1>
+
+        <div class="menu-section">
+            <h2>Signature</h2>
+            <div class="menu-item">
+                <span class="item-name">Macho</span>
+                <span class="item-price">Rp 8,999</span>
+                <img src="images/macho.jpg" alt="Macho" loading="lazy">
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Kopi Jadoel</span>
+                <span class="item-price">Rp 7,500</span>
+                <img src="images/kopijadoel.jpg" alt="Kopi Jadoel" loading="lazy">
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Choco Oreo Crumble</span>
+                <span class="item-price">Rp 9,000</span>
+                <img src="images/chocooreo.jpg" alt="Choco Oreo Crumble" loading="lazy">
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Blueberry Short Bread</span>
+                <span class="item-price">Rp 8,500</span>
+                <img src="images/blueberry.jpg" alt="Blueberry Short Bread" loading="lazy">
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2>Coffee</h2>
+            <div class="menu-item">
+                <span class="item-name">Espresso</span>
+                <span class="item-price">Rp 4,000</span>
+                <img src="images/espresso.jpg" alt="Espresso" loading="lazy">
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Americano</span>
+                <span class="item-price">Rp 4,500</span>
+                <img src="images/americano.jpg" alt="Americano" loading="lazy">
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Vietnam Drip</span>
+                <span class="item-price">Rp 5,000</span>
+                <img src="images/vietnam.jpg" alt="Vietnam Drip" loading="lazy">
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Guillermo</span>
+                <span class="item-price">Rp 6,000</span>
+                <img src="images/guillermo.jpg" alt="Guillermo" loading="lazy">
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Piccolo Latte</span>
+                <span class="item-price">Rp 5,500</span>
+                <img src="images/piccolo.jpg" alt="Piccolo Latte" loading="lazy">
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Cappuccino</span>
+                <span class="item-price">Rp 5,000</span>
+                <img src="images/cappuccino.jpg" alt="Cappuccino" loading="lazy">
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Cafe Latte</span>
+                <span class="item-price">Rp 5,000</span>
+                <img src="images/latte.jpg" alt="Cafe Latte" loading="lazy">
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Caffe Mocha</span>
+                <span class="item-price">Rp 5,500</span>
+                <img src="images/mocha.jpg" alt="Caffe Mocha" loading="lazy">
+            </div>
+        </div>
+
+        <!-- Additional Sections for Drink and Food -->
+        <div class="menu-section">
+            <h2>Drink</h2>
+            <div class="menu-item">
+                <span class="item-name">Iced Tea</span>
+                <span class="item-price">Rp 12,000</span>
+                <img src="images/iced_tea.jpg" alt="Iced Tea" loading="lazy">
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Lemonade</span>
+                <span class="item-price">Rp 13,500</span>
+                <img src="images/lemonade.jpg" alt="Lemonade" loading="lazy">
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2>Food</h2>
+            <div class="menu-item">
+                <span class="item-name">Croissant</span>
+                <span class="item-price">Rp 25,000</span>
+                <img src="images/croissant.jpg" alt="Croissant" loading="lazy">
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Sandwich</span>
+                <span class="item-price">Rp 30,000</span>
+                <img src="images/sandwich.jpg" alt="Sandwich" loading="lazy">
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const menuItems = document.querySelectorAll('.menu-item');
+        const container = document.querySelector('.container');
+        let activeItem = null;
+
+        menuItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                if (activeItem && activeItem !== item) {
+                    activeItem.classList.remove('show-image');
+                }
+                item.classList.add('show-image');
+                activeItem = item;
+            });
+        });
+
+        container.addEventListener('mouseleave', () => {
+            if (activeItem) {
+                activeItem.classList.remove('show-image');
+                activeItem = null;
+            }
+        });
+    </script>
+</body>
+</html>
